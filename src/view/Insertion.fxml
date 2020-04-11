@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="237.0" prefWidth="545.0" stylesheets="@../recursos/styles/styles.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.InsertionController">
+    <children>
+        <TextArea fx:id="cadenaTxt" layoutX="28.0" layoutY="89.0" prefHeight="75.0" prefWidth="489.0">
+            <font>
+                <Font name="Segoe UI" size="14.0" />
+            </font>
+        </TextArea>
+        <Button layoutX="386.0" layoutY="180.0" mnemonicParsing="false" onAction="#btnResolverPressed" prefHeight="32.0" prefWidth="128.0" text="Resolver">
+            <font>
+                <Font name="Segoe UI Semibold" size="14.0" />
+            </font>
+        </Button>
+        <Label layoutX="159.0" layoutY="27.0" text="INSERCIÓN EN PARENTESIS">
+            <font>
+                <Font name="Segoe UI Semibold" size="18.0" />
+            </font>
+        </Label>
+        <Label layoutX="28.0" layoutY="63.0" text="Digita valores del alfabeto {a, b, c}">
+            <font>
+                <Font name="Segoe UI Semibold" size="14.0" />
+            </font>
+        </Label>
+        <ComboBox fx:id="opcion" layoutX="200.0" layoutY="182.0" prefWidth="170.0" prefHeight="28.0" />
+           
+    </children>
+</AnchorPane>

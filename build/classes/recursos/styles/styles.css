@@ -1,0 +1,21 @@
+AnchorPane{
+    -fx-background-image: url(/recursos/imagenes/fondo.png);
+}
+.label{
+    -fx-text-fill: white;
+}
+.button{
+    -fx-cursor: hand;    
+    -fx-text-fill: #d97077;
+    -fx-background-color: #ffeeef;
+    -fx-border-radius: 10;
+}
+.button:pressed{
+    -fx-cursor: hand;    
+    -fx-text-fill: #ffeeef;
+    -fx-background-color: #d97077;
+    -fx-border-radius: 10;
+}
+.combo-box-base {
+    -fx-background-color: white;
+}
