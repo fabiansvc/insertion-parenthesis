@@ -66,7 +66,8 @@ public class InsertionController implements Initializable {
     private void resolverProgramacionVoraz() {
         cadena = (cadenaTxt.getText()).trim().toLowerCase().split("");
         AlgoritmoVoraz av = new AlgoritmoVoraz(cadena);
-
+        
+        
         if (cadena.length > 2) {
             av.resolver();
         } else if (cadena.length > 1) {

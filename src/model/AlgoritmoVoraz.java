@@ -19,28 +19,41 @@ public class AlgoritmoVoraz {
         this.cadena = cadena;
     }
 
+    /**
+     * Método que se encarga de resolver el problema.
+     */
     public void resolver() {
-        if (buscarC(cadena)) {
-            if (lengthFinal == 1) {
-                if ("a".equals(getResultado(cadena[0] + "c"))) {
-                    showResultado("Si");
+        if (cadena.length == 3 && "a".equals(cadena[0]) && "b".equals(cadena[1]) && "c".equals(cadena[2])) {
+            showResultado("Si");
+        } else {
+            if (buscarC(cadena)) {
+                if (lengthFinal == 1) {
+                    if ("a".equals(getResultado(cadena[0] + "c")) || "b".equals(getResultado(cadena[0] + "c"))) {
+                        System.out.println("entro");
+                        showResultado("Si");
+                    } else {
+                        showResultado("No");
+                    }
                 } else {
-                    showResultado("No");
+                    if (buscarA(cadena, lengthFinal)) {
+                        showResultado("Si");
+                    } else {
+                        showResultado("No");
+                    }
+
                 }
             } else {
-                if (buscarA(cadena, lengthFinal)) {
-                    showResultado("Si");
-                } else {
-                    showResultado("No");
-                }
-
+                showResultado("No");
             }
-        } else {
-            showResultado("No");
         }
-
     }
 
+    /**
+     * Método que se encarga de buscar una c por la derecha.
+     *
+     * @param cadena
+     * @return
+     */
     private boolean buscarC(String cadena[]) {
         String resultado = getResultado(cadena[cadena.length - 2] + cadena[cadena.length - 1]);
         if (resultado.equals("c")) {
@@ -55,13 +68,20 @@ public class AlgoritmoVoraz {
                 }
             }
         }
-        if (cadena[0] == "c" && resultado == "a") {
+        if ("c".equals(cadena[0]) && "a".equals(resultado)) {
             showResultado("Si");
         }
 
         return false;
     }
 
+    /**
+     * Método que se encarga de buscar una A por la izquierda.
+     *
+     * @param cadena
+     * @param tam
+     * @return
+     */
     private boolean buscarA(String[] cadena, int tam) {
         String resultado = getResultado(cadena[0] + cadena[1]);
         if (resultado.equals("a")) {
@@ -74,13 +94,9 @@ public class AlgoritmoVoraz {
                 }
             }
         }
-        if (resultado == "b") {
+        if ("b".equals(resultado)) {
             showResultado("Si");
         }
-        return false;
-    }
-
-    private boolean buscarABC(String[] cadena) {
         return false;
     }
 
