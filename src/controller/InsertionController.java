@@ -10,7 +10,6 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.TextArea;
 import model.AlgoritmoDinamico;
-import model.AlgoritmoVoraz;
 import view.AlertBox;
 import view.IAlertBox;
 
@@ -64,8 +63,15 @@ public class InsertionController implements Initializable {
      * Método que resuelve por programación voraz.
      */
     private void resolverProgramacionVoraz() {
-        cadena = (cadenaTxt.getText()).trim().toLowerCase().split("");
-        AlgoritmoVoraz av = new AlgoritmoVoraz(cadena);
+        
+    }
+
+    /**
+     * Método que resuelve por medio de la programación dinámica.
+     */
+    private void resolverProgramacionDinamica() {
+         cadena = (cadenaTxt.getText()).trim().toLowerCase().split("");
+        AlgoritmoDinamico av = new AlgoritmoDinamico(cadena);
 
         if (cadena.length > 2) {
             av.resolver(2);
@@ -78,21 +84,6 @@ public class InsertionController implements Initializable {
                  IAlertBox alert = new AlertBox();
                 alert.showAlert("Inserción en parentesis", "Resultado", "No");
             }
-        } else {
-            IAlertBox alert = new AlertBox();
-            alert.showAlert("Inserción en parentesis", "Información", "Solo se admiten cadenas mayores o iguales de 2 digitos y sin espacios del alfabeto {a,b,c}");
-        }
-    }
-
-    /**
-     * Método que resuelve por medio de la programación dinámica.
-     */
-    private void resolverProgramacionDinamica() {
-        cadena = (cadenaTxt.getText()).trim().toLowerCase().split("");
-        AlgoritmoDinamico ad = new AlgoritmoDinamico(cadena);
-        if (cadena.length > 2) {
-            ad.resolver();
-        } else if (cadena.length > 1) {
         } else {
             IAlertBox alert = new AlertBox();
             alert.showAlert("Inserción en parentesis", "Información", "Solo se admiten cadenas mayores o iguales de 2 digitos y sin espacios del alfabeto {a,b,c}");
