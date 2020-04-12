@@ -10,7 +10,7 @@ import view.IAlertBox;
 
 public class AlgoritmoDinamico {
 
-    private ArrayList<String> temporal;
+    private ArrayList<String> valoresIzquierda;
     private boolean estado;
     private String[] cadena;
     /**
@@ -19,7 +19,7 @@ public class AlgoritmoDinamico {
      */
     public AlgoritmoDinamico(String[] cadena) {
         this.cadena = cadena;
-        temporal = new ArrayList();
+        valoresIzquierda = new ArrayList();
         estado = false;
     }
 
@@ -36,10 +36,10 @@ public class AlgoritmoDinamico {
             i++;
         }
         if (estado) {
-            int j = temporal.size();
+            int j = valoresIzquierda.size();
             while (j > 0) {
-                System.out.print(temporal.get(j - 1) + resultado + "=>");
-                resultado = getResultado(temporal.get(j - 1) + resultado);
+                System.out.print(valoresIzquierda.get(j - 1) + resultado + "=>");
+                resultado = getResultado(valoresIzquierda.get(j - 1) + resultado);
                 System.out.println(resultado);
                 j--;
             }
@@ -49,7 +49,7 @@ public class AlgoritmoDinamico {
             alert.showAlert("Inserción en parentesis", "Resultado", "Si");
 
         } else if (recursivo < cadena.length) {
-            temporal.add(cadena[posInicial - 2]);
+            valoresIzquierda.add(cadena[posInicial - 2]);
             estado = true;
             resolver(recursivo += 1);
         } else {
